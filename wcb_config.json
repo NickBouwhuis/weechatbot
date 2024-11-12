@@ -1,0 +1,22 @@
+{
+    "bot_base": "/home/weechat/.weechat/python/wcb_bot",
+    "bot_modules": "/home/weechat/.weechat/python/wcb_bot/modules",
+    "bot_extra_modules": "/home/weechat/.weechat/python/wcb_bot/extra_modules",
+    "bot_config": "/home/weechat/.weechat/python/wcb_bot/wcb_config.json",
+    "bot_alarms": "/home/weechat/.weechat/python/wcb_bot/wcb_alarms.json",
+    "bot_uniqueid": "WWFePu4U",
+    "bot_ownermask": "",
+    "bot_trigger_re": "^[!\\.]",
+    "bot_command_re": "([-a-zA-Z0-9]+)(?:\\s(.*)|$)",
+    "bot_shared_knowledge": false,
+    "udp_listen_ip": "::ffff:127.0.0.1",
+    "udp_listen_port": 46664,
+    "udp_listen_pass": "WeeChatBot",
+    "debug_udp": false,
+    "debug_event": false,
+    "db_host": "db",
+    "db_port": "5432",
+    "db_user": "weechatbot",
+    "db_pass": "weechatbot",
+    "db_name": "weechatbot"
+} 

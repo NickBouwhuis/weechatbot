@@ -68,3 +68,11 @@ If the bot is on multiple networks with the same channelname, you can specify th
 ```sh
 $ echo "s00p3rzeeKRiT! ircnet #testchan Test message on ircnet via UDP" | nc -q1 -u 127.0.0.1 47774
 ```
+
+Docker
+---
+To attach to the tmux session, run:
+
+```bash
+docker compose exec weechatbot tmux attach -t weechat
+```

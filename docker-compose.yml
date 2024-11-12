@@ -1,0 +1,31 @@
+services:
+  weechatbot:
+    build: .
+    volumes:
+      - weechat_data:/home/weechat/.weechat
+    environment:
+      DB_PASSWORD: weechatbot
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: weechatbot
+      POSTGRES_PASSWORD: weechatbot
+      POSTGRES_DB: weechatbot
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./dbschema.psql:/docker-entrypoint-initdb.d/dbschema.psql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weechatbot"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  weechat_data:
+  postgres_data:
